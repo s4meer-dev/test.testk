@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Brew Haven — Experience the perfect blend of aroma and taste. Freshly brewed coffee, premium beans, cozy atmosphere." />
+    <title>Brew Haven | Freshly Brewed Happiness</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- CART SIDEBAR OVERLAY -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- CART SIDEBAR -->
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3>&#9749; Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">&#10005;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cartTotal">&#8377;0</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Place Order</button>
+        </div>
+    </aside>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast"></div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8679;</button>
+
+    <nav class="navbar" id="home-anchor">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">&#9749;</span> Brew Haven
+            </a>
+            <input type="checkbox" id="menuToggle" class="menu-toggle" />
+            <label for="menuToggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li class="close-item">
+                    <label for="menuToggle" class="close-overlay" aria-label="Close menu"></label>
+                </li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- CART ICON -->
+            <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" width="22" height="22">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 001.99 1.61h9.72a2 2 0 001.99-1.61L23 6H6" />
+                </svg>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tag">Est. 2018 &bull; Single Origin Beans</p>
+            <h1 class="hero-headline">
+                Freshly Brewed<br /><em>Happiness</em>
+            </h1>
+            <p class="hero-sub">
+                Experience the perfect blend of aroma and taste.<br />
+                Every cup crafted with love and precision.
+            </p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Our Specialties</p>
+                <h2 class="section-title">Featured Menu</h2>
+                <p class="section-sub">Handcrafted drinks made with ethically sourced, freshly roasted beans.</p>
+            </div>
+
+            <!-- FILTER TABS -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hot">Hot ☕</button>
+                <button class="filter-btn" data-filter="cold">Cold 🧊</button>
+                <button class="filter-btn" data-filter="seasonal">Seasonal 🍂</button>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+
+                <article class="menu-card" data-category="hot">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=600&auto=format&fit=crop&q=80"
+                            alt="Espresso shot in a white ceramic cup" loading="lazy" />
+                        <span class="card-badge">Best Seller</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Espresso</h3>
+                            <span class="card-price">&#8377;120</span>
+                        </div>
+                        <p class="card-desc">Bold, intense, and aromatic — a classic single-origin shot pulled to
+                            perfection.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Espresso" data-price="120">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="hot">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&auto=format&fit=crop&q=80"
+                            alt="Cappuccino with foam art" loading="lazy" />
+                        <span class="card-badge">Popular</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Cappuccino</h3>
+                            <span class="card-price">&#8377;180</span>
+                        </div>
+                        <p class="card-desc">Velvety steamed milk meets rich espresso, topped with a delicate foam
+                            cloud.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Cappuccino" data-price="180">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="cold">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&auto=format&fit=crop&q=80"
+                            alt="Cold brew coffee in a tall glass" loading="lazy" />
+                        <span class="card-badge">Summer Pick</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Cold Brew</h3>
+                            <span class="card-price">&#8377;220</span>
+                        </div>
+                        <p class="card-desc">Steeped 18 hours in cold water for a smooth, low-acid, naturally sweet
+                            brew.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Cold Brew" data-price="220">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="hot">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=600&auto=format&fit=crop&q=80"
+                            alt="Caramel latte with caramel drizzle" loading="lazy" />
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Caramel Latte</h3>
+                            <span class="card-price">&#8377;200</span>
+                        </div>
+                        <p class="card-desc">Creamy espresso latte swirled with house-made salted caramel drizzle.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Caramel Latte" data-price="200">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="cold">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600&auto=format&fit=crop&q=80"
+                            alt="Iced mocha in a glass" loading="lazy" />
+                        <span class="card-badge">New</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Iced Mocha</h3>
+                            <span class="card-price">&#8377;240</span>
+                        </div>
+                        <p class="card-desc">Rich chocolate meets chilled espresso over ice — indulgent and refreshing.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Iced Mocha" data-price="240">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card" data-category="seasonal">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?w=600&auto=format&fit=crop&q=80"
+                            alt="Pumpkin spice latte" loading="lazy" />
+                        <span class="card-badge">Limited</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <h3 class="card-name">Pumpkin Spice</h3>
+                            <span class="card-price">&#8377;260</span>
+                        </div>
+                        <p class="card-desc">A warm blend of espresso, steamed milk, and autumn spices — purely seasonal.</p>
+                        <div class="card-actions">
+                            <div class="qty-control">
+                                <button class="qty-btn qty-minus" aria-label="Decrease quantity">&#8722;</button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn qty-plus" aria-label="Increase quantity">&#43;</button>
+                            </div>
+                            <button class="btn-add-cart" data-name="Pumpkin Spice" data-price="260">Add to Cart</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=800&auto=format&fit=crop&q=80"
+                    alt="Interior of Brew Haven coffee shop" loading="lazy" />
+                <div class="about-badge">
+                    <span class="badge-num">8+</span>
+                    <span class="badge-text">Years of Craft</span>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <p class="section-tag">Our Story</p>
+                <h2 class="section-title">Born from a Love<br />of <em>Great Coffee</em></h2>
+                <p class="about-para">
+                    Brew Haven started as a small corner cart in 2018, powered by a single dream — to serve coffee that
+                    feels like a warm hug. We source our beans directly from highland farms in Coorg and Chikmagalur,
+                    ensuring every cup carries the story of its origin.
+                </p>
+                <p class="about-para">
+                    Today, we're more than a café. We're a community — a place where ideas bloom over pour-overs,
+                    friendships deepen over cortados, and every visit becomes a cherished ritual.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-num">12K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">6</span>
+                        <span class="stat-label">Bean Origins</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">30+</span>
+                        <span class="stat-label">Menu Items</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+        <input type="radio" name="testimonial" id="t1" class="t-radio" checked />
+        <input type="radio" name="testimonial" id="t2" class="t-radio" />
+        <input type="radio" name="testimonial" id="t3" class="t-radio" />
+
+        <div class="container">
+            <div class="section-header">
+                <p class="section-tag">Kind Words</p>
+                <h2 class="section-title">What Our Guests Say</h2>
+            </div>
+
+            <div class="slider-outer">
+                <div class="slider-track">
+
+                    <div class="review-card">
+                        <div class="review-quote">&#8220;</div>
+                        <p class="review-text">
+                            The cappuccino here is absolutely divine. The foam is perfectly textured and the espresso
+                            hits just right. It's become my non-negotiable morning ritual.
+                        </p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80"
+                                alt="Priya S." />
+                            <div>
+                                <strong>Priya S.</strong>
+                                <span>Marketing Lead, Bangalore</span>
+                            </div>
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-quote">&#8220;</div>
+                        <p class="review-text">
+                            Discovered Brew Haven on a rainy afternoon and it instantly became my favourite quiet
+                            corner. The cold brew is absolutely incredible — smooth and full of flavour.
+                        </p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                                alt="Arjun M." />
+                            <div>
+                                <strong>Arjun M.</strong>
+                                <span>Freelance Designer</span>
+                            </div>
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-quote">&#8220;</div>
+                        <p class="review-text">
+                            The ambience is warm and welcoming, the staff genuinely care, and the caramel latte is pure
+                            heaven. I bring every out-of-town guest here — they're always impressed.
+                        </p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                                alt="Neha K." />
+                            <div>
+                                <strong>Neha K.</strong>
+                                <span>Architect, Mumbai</span>
+                            </div>
+                        </div>
+                        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    </div>
+
+                </div>
+
+                <div class="slider-dots">
+                    <label for="t1" class="dot" aria-label="Review 1"></label>
+                    <label for="t2" class="dot" aria-label="Review 2"></label>
+                    <label for="t3" class="dot" aria-label="Review 3"></label>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+
+            <div class="contact-info">
+                <p class="section-tag">Get In Touch</p>
+                <h2 class="section-title">We'd Love to<br /><em>Hear from You</em></h2>
+                <ul class="contact-details">
+                    <li>
+                        <span class="detail-icon">&#128205;</span>
+                        <span>123 Roast Lane, Indiranagar,<br />Bangalore &ndash; 560038</span>
+                    </li>
+                    <li>
+                        <span class="detail-icon">&#128222;</span>
+                        <span>+91 98765 43210</span>
+                    </li>
+                    <li>
+                        <span class="detail-icon">&#9993;</span>
+                        <span>hello@brewhaven.in</span>
+                    </li>
+                    <li>
+                        <span class="detail-icon">&#128337;</span>
+                        <span>Mon &ndash; Sun &nbsp;|&nbsp; 8:00 AM &ndash; 10:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required
+                        minlength="2" />
+                    <span class="error-msg">Please enter your name (min 2 characters).</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                        required />
+                    <span class="error-msg">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help&#8230;" required
+                        minlength="10"></textarea>
+                    <span class="error-msg">Please enter a message (min 10 characters).</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                <p class="form-success" id="formSuccess">&#10003; Message sent! We'll get back to you soon.</p>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <a href="#home" class="nav-logo footer-logo">&#9749; Brew Haven</a>
+                <p>Crafted with passion. Brewed with love.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <circle cx="12" cy="12" r="4" />
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter / X">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Brew Haven. All rights reserved. | Made with HTML, CSS &amp; JS.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
